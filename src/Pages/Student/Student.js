@@ -49,7 +49,7 @@ function Student() {
         </div>
         <div style={{width:'25%',borderLeft:'2px solid black'}}>
 
-        <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'flex-start',margin:'10px 0px',margin:'10px 0px 0px 10px'}}>
+        <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'flex-start',margin:'10px 0px 0px 10px'}}>
 
             <div style={{display:'flex',flexDirection:'column',width:'100%'}}>
               <div style={{fontSize:'12px',display:'flex',justifyContent:'flex-start',color:'#2C2C2C'}}>MOBILE NO.</div>

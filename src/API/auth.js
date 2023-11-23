@@ -37,7 +37,6 @@ export default class Auth {
   //log in
   static login(values) {
     let payload = values;
-    console.log(payload)
     return new Promise((resolve) => {
       instance
         .post("userLogin", payload.data)
