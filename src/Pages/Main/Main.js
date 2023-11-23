@@ -1,5 +1,7 @@
 import './Main.css';
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
+
+
 import {Link} from 'react-router-dom'
 import Image1 from './Attendance.png'
 import Image2 from './Dashboard.png'
@@ -7,12 +9,15 @@ import Image3 from './Report.png'
 import Image4 from './Student.png'
 import Image5 from './Logout.png'
 import Attendance from '../Attendance/Attendance'
+import AttendanceTeacher from '../Attendance/AttendanceTeacher';
 import Dashboard from '../Dashboard/Dashboard'
 import Student from '../Student/Student'
 import Report from '../Report/Report'
+
 function Main() {
   function logOut(){
     localStorage.removeItem('AmsIgmcLoginToken')
+    localStorage.removeItem("AmsIgmcLoginUser")
     window.location.reload(true);
   }
   return (
@@ -42,7 +47,8 @@ function Main() {
     <div style={{height:'100%',width:'85%'}}>
         
         <Routes>
-          <Route exact path="/attendance" element={<Attendance/>}/>
+        <Route exact path="/" element={<Attendance/>}/>
+          <Route exact path="/attendance" element={localStorage.getItem('AmsIgmcLoginUser')==='Akshay'?<Attendance/>:<AttendanceTeacher/>}/>
           <Route exact path="/dashboard" element={<Dashboard/>}/>
           <Route exact path="/report" element={<Report/>}/>
           <Route exact path="/student" element={<Student/>}/>
