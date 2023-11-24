@@ -1,4 +1,5 @@
 import './Attendance.css';
+
 function Attendance() {
   return (
     <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',margin:'50px'}}>
@@ -14,6 +15,8 @@ function Attendance() {
     <option value="BDS">BDS</option>
     <option value="BSc. Para">BSc. Para</option>
   </select>
+  
+  
   <select id="Course" name="Course" style={{height:'50px',width:'150px',margin:'0px 10px',border:'1px solid #CED4DA',borderRadius:'5px'}}>
   <option value="" disabled selected style={{color:'#444444'}}>SUBJECT</option>
     <option value="FOUNDATION COURSE">FOUNDATION COURSE</option>
@@ -21,6 +24,9 @@ function Attendance() {
     <option value="PHYSIOLOGY">PHYSIOLOGY</option>
     <option value="BIO CHEMISTRY">BIO CHEMISTRY</option>
   </select>
+
+
+
   <select id="Course-Type" name="Course-Type" style={{height:'50px',width:'150px',margin:'0px 10px',border:'1px solid #CED4DA',borderRadius:'5px'}}>
   <option value="" disabled selected style={{color:'#444444'}}>TYPE</option>
     <option value="THEORY">THEORY</option>
@@ -51,6 +57,7 @@ function Attendance() {
     <option value="BDS">BDS</option>
     <option value="BSc. Para">BSc. Para</option>
   </select>
+
   <select id="Course" name="Course" style={{height:'50px',width:'150px',margin:'0px 10px',border:'1px solid #CED4DA',borderRadius:'5px'}}>
   <option value="" disabled selected style={{color:'#444444'}}>SUBJECT</option>
     <option value="FOUNDATION COURSE">FOUNDATION COURSE</option>
