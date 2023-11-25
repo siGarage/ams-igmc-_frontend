@@ -1,7 +1,7 @@
 import axios from "axios";
-const url = "http://localhost:4500";
+import Environment from "../enviroment";
 const instance = axios.create({
-  baseURL: url,
+  baseURL: Environment.USER_URL,
   headers: { "Content-Type": "application/json" },
 });
 
@@ -21,19 +21,6 @@ function defaultCatch(error, resolve) {
 }
 
 export default class Auth {
-  //signup
-  static signup(values) {
-    let payload = values;
-
-    return new Promise((resolve) => {
-      instance
-        .post("/api/auth/register", payload.data)
-        .then((response) => {
-          resolve(response);
-        })
-        .catch((error) => defaultCatch(error, resolve));
-    });
-  }
   //log in
   static login(values) {
     let payload = values;

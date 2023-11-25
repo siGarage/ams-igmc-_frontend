@@ -1,7 +1,6 @@
 import './Main.css';
 import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
-
-
+import * as React from 'react'
 import {Link} from 'react-router-dom'
 import Image1 from './Attendance.png'
 import Image2 from './Dashboard.png'
@@ -9,31 +8,18 @@ import Image3 from './Report.png'
 import Image4 from './Student.png'
 import Image5 from './Logout.png'
 import Image6 from './superadmin.png'
-import Attendance from '../Attendance/Attendance'
-import AttendanceTeacher from '../Attendance/AttendanceTeacher';
-import Dashboard from '../Dashboard/Dashboard'
-import Student from '../Student/Student'
-import Report from '../Report/Report'
-import AdminAccess from '../AdminAccess/AdminAccess';
+
+const Attendance = React.lazy(()=>import('../Attendance/Attendance'))
+const Dashboard = React.lazy(()=>import('../Dashboard/Dashboard'))
+const Student = React.lazy(()=>import('../Student/Student'))
+const Report = React.lazy(()=>import('../Report/Report'))
+const AdminAccess= React.lazy(()=>import('../AdminAccess/AdminAccess'))
+const CreateGroup = React.lazy(()=>import('../AdminAccess/CreateGroup'))
 function Main() {
   let a=1;
-  let AttendancePage;
-if (a===1) {
-  AttendancePage = <Attendance/>;
-} 
-else if(a===2) {
-  AttendancePage = <AttendanceTeacher/>;
-}
-else if(a===3){
-  AttendancePage = <AttendanceTeacher/>;
-}
-else{
-  AttendancePage=<div>Error: Invalid User Role</div>
-}
   let logOut=()=>{
-    localStorage.removeItem('AmsIgmcLoginToken')
-    localStorage.removeItem("AmsIgmcLoginUser")
-    window.location.reload(true);
+    localStorage.clear()
+    window.location.href='/';
   }
   return (
     <>
@@ -62,15 +48,45 @@ else{
             <div onClick={logOut} style={{cursor:'pointer',fontFamily:'Open Sans',fontWeight:'600',color:'#012970',display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'flex-start',margin:'10px 0px 0px 10px'}}><img src={Image5} alt='logout'/><div>&nbsp;&nbsp;&nbsp;Logout</div></div>
         </div>
     </div>
-    <div style={{height:'100%',width:'85%'}}>
-        
+    <div style={{height:'100%',width:'85%'}}>   
         <Routes>
-        <Route exact path="/" element={AttendancePage}/>
-          <Route exact path="/attendance" element={AttendancePage}/>
-          <Route exact path="/dashboard" element={<Dashboard/>}/>
-          <Route exact path="/report" element={<Report/>}/>
-          <Route exact path="/student" element={<Student/>}/>
-          <Route exact path="/adminaccess" element={a===1?<AdminAccess/>:<div></div>}/>
+        <Route exact path="/" element={<React.Suspense fallback={<>...</>}>
+        <Attendance/>
+        </React.Suspense>
+        }/>
+         
+         <Route exact path="/attendance" element={<React.Suspense fallback={<>...</>}>
+        <Attendance/>
+        </React.Suspense>
+        }/>
+        
+        <Route exact path="/dashboard" element={<React.Suspense fallback={<>...</>}>
+        <Dashboard/>
+        </React.Suspense>
+        }/>
+
+        <Route exact path="/" element={<React.Suspense fallback={<>...</>}>
+        <Report/>
+        </React.Suspense>
+        }/>
+
+        <Route exact path="/student" element={<React.Suspense fallback={<>...</>}>
+        <Student/>
+        </React.Suspense>
+        }/>  
+        
+        
+        {a===1 &&
+          <>
+          <Route exact path="/adminaccess" element={<React.Suspense fallback={<>...</>}>
+          <AdminAccess/>
+        </React.Suspense>
+        }/>
+        <Route exact path="/creategroup" element={<React.Suspense fallback={<>...</>}>
+        <CreateGroup/>
+        </React.Suspense>
+        }/>
+          </>}
         </Routes>
     </div>
     </div>
