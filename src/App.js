@@ -1,21 +1,21 @@
 import './App.css';
-import Login from './Pages/Login/Login'
+import { connect } from 'react-redux';
+import React,{memo} from 'react';
 import Navbar from './Component/Navbar'
-import Main from './Pages/Main/Main'
-import ForgetPassword from './Pages/ForgetPassword/ForgetPassword';
-import { useState } from 'react';
-function App() {
-  let [toggleValue,setToggleValue]=useState(0)
-  let a=localStorage.getItem('AmsIgmcLoginToken');
+import Main from './Pages/Routes/Main';
+import Public from './Pages/Routes/Public'
+
+const App=(props)=> {
+  const {auth}=props;
   return (
     <div className="App">
       <Navbar/>
-
-    {
-  (!a?(toggleValue===0?<Login setToggleValue={setToggleValue}/>:<ForgetPassword setToggleValue={setToggleValue}/>):<Main/>)
-    }
+      {auth.logged_in?<Main/>:<Public/>}
     </div>
   );
 }
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+export default connect(mapStateToProps)(memo(App));
 
-export default App;

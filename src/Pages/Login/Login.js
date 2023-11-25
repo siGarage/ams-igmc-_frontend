@@ -4,18 +4,19 @@ import { useState } from 'react';
 import {ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Auth from "../../API/auth";
-function Login(props) {
+import constants from '../../constants';
+import { useDispatch } from 'react-redux';
+import {Link} from 'react-router-dom'
+function Login() {
+  const dispatch = useDispatch();
   const[credentials,setCredentials] = useState({email:"",password:""});
-  let toggleValueFunction=()=>{
-    props.setToggleValue(1)
-  }
   let validateForm=(credentials)=> {
     const {email,password}=credentials;
     if(!email){
       toast.error('Please fill User ID');
       return;
     }
-    if(!email){
+    if(!password){
       toast.error('Please fill password');
       return;
     }
@@ -33,9 +34,10 @@ function Login(props) {
         Auth.login({ data: data }).then((res) => {
           if (res.data.status_code === 1) 
           {
-            
-            localStorage.setItem("AmsIgmcLoginToken", res.data.data.token);
-            localStorage.setItem("AmsIgmcLoginUser", res.data.data.responseUser.name);
+            dispatch({
+              type: constants("auth").reducers.login.success,
+              payload: { data: res.data.data },
+            });
             window.location.href='/attendance';
           } 
           else {
@@ -98,7 +100,7 @@ function Login(props) {
       </div> */}
       <div style={{width:'80%',display:'flex',flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
       <div onClick={()=>validateForm(credentials)}  style={{width:'20%',margin:'5px 0px',height:'30px',backgroundColor:'#3C4EF1',color:'white',fontSize:'18px',borderRadius:'5px',display:'flex',cursor:'pointer',justifyContent:'center',alignItems:'center'}}>Sign in</div>
-      <div style={{color:'blue',cursor:'pointer'}} onClick={()=>toggleValueFunction()}>ForgetPassword?</div>
+      <Link to='/forgetpassword' style={{textDecoration:'none'}}><div style={{color:'blue',cursor:'pointer'}}>ForgetPassword?</div></Link>
       </div>
       </form>
 
