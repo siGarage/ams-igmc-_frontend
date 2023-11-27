@@ -1,3 +1,35 @@
 ::placeholder {
     color: #899BBD;
   }
+
+  .checkbox-div label {
+    float: left;
+     height: 100%;
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+  }
+  
+  .checkbox-div label span {
+    text-align: center;
+    padding: 3px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .checkbox-div label input {
+    position: absolute;
+    display: none;
+    color: #fff !important;
+  }
+
+  .checkbox-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    float: left;
+  }

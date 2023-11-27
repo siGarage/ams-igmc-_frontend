@@ -17,7 +17,7 @@ function Login() {
       return;
     }
     if(!password){
-      toast.error('Please fill password');
+      toast.error('Please fill Password');
       return;
     }
 

@@ -6,7 +6,7 @@ function Attendance() {
   const [facultycourse, setFacultyCourse] = useState("");
   const [facultysubject, setFacultySubject] = useState("");
   
-  let a=0;
+  let a=1;
   const handleStudentCourseChange = (e) => {
     setStudentCourse(e.target.value);
     setStudentSubject("");
