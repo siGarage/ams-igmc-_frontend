@@ -15,6 +15,8 @@ const Student = React.lazy(()=>import('../Student/Student'))
 const Report = React.lazy(()=>import('../Report/Report'))
 const AdminAccess= React.lazy(()=>import('../AdminAccess/AdminAccess'))
 const CreateGroup = React.lazy(()=>import('../AdminAccess/CreateGroup'))
+const ShowGroup = React.lazy(()=>import('../AdminAccess/ShowGroup'))
+
 function Main() {
   let a=1;
   let logOut=()=>{
@@ -82,8 +84,13 @@ function Main() {
           <AdminAccess/>
         </React.Suspense>
         }/>
-        <Route exact path="/creategroup" element={<React.Suspense fallback={<>...</>}>
+      <Route exact path="/creategroup" element={<React.Suspense fallback={<>...</>}>
         <CreateGroup/>
+        </React.Suspense>
+        }/>
+
+      <Route exact path="/showgroups" element={<React.Suspense fallback={<>...</>}>
+        <ShowGroup/>
         </React.Suspense>
         }/>
           </>}
