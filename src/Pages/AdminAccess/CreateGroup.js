@@ -3,7 +3,10 @@ import {useState} from 'react'
 import {ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import GroupAPI from "../../API/groupapi";
+import { useSelector} from 'react-redux'
 function CreateGroup() {
+  const auth = useSelector((state) => state.auth)
+  const token=auth.user.token;
   let [facultyAttedenceViewPermission,setfacultyAttedenceViewPermission]=useState(false);
   let [studentAttendenceViewPermision,setstudentAttendenceViewPermision]=useState(false);
   let [facultyAttendeceUpdatePermission,setfacultyAttendeceUpdatePermission]=useState(false);
@@ -27,7 +30,7 @@ function CreateGroup() {
 
     else{
       const data= {group_name,description,facultyAttedenceViewPermission,studentAttendenceViewPermision,facultyAttendeceUpdatePermission,studentAttendenceUpdatePermission}
-      GroupAPI.createGroup({ data: data }).then((res) => {
+      GroupAPI.createGroup({ data: data },token).then((res) => {
         if (res.data.status_code === 200) 
         {
           toast.success(res.data.message)
@@ -40,7 +43,7 @@ function CreateGroup() {
   }
   return (
     <>
-   <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'flex-start',margin:'50px'}}>
+   <section style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'flex-start',margin:'50px'}}>
     <ToastContainer/>
     <div style={{width:'94%',display:'flex',justifyContent:'flex-start',flexDirection:'column'}}>
       <div style={{display:'flex',justifyContent:'flex-start',fontFamily:'Nunito',fontSize:'24px',fontWeight:'600',color:'#4154F1'}}>Create Group</div>
@@ -69,7 +72,7 @@ function CreateGroup() {
       <input type='Text' name='description' onChange={onChange} placeholder='Description' style={{fontSize:'17px',height:'40px',width:'50%',border:'none',borderBottom:'2px solid #4154F1',margin:'10px 0px',fontFamily:'Nunito'}}/>
       <div onClick={()=>validateForm(groupData)} style={{cursor:'pointer',width:'20%',height:'20px',fontWeight:'400',backgroundColor:'#4154F1',color:'white',display:'flex',justifyContent:'center',alignItems:'center',borderRadius:'25px',fontSize:'20px',fontFamily:'Nunito',padding:'10px 0px',margin:'15px 0px'}}>Create Group</div>
     </form>
-    </div>
+    </section>
     </>
   );
 }
