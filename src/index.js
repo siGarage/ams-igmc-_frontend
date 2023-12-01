@@ -5,8 +5,9 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/es/integration/react";
+// import createStore from "./Store";
 import createStore from "./Store";
-const { store, persistor } = createStore();
+const {store,persistor} = createStore();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

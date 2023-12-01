@@ -1,12 +1,13 @@
 import './Attendance.css';
 import { useState } from 'react';
 function Attendance() {
+  let a=1;
   const [studentcourse, setStudentCourse] = useState("");
   const [studentsubject, setStudentSubject] = useState("");
   const [facultycourse, setFacultyCourse] = useState("");
   const [facultysubject, setFacultySubject] = useState("");
   
-  let a=1;
+  
   const handleStudentCourseChange = (e) => {
     setStudentCourse(e.target.value);
     setStudentSubject("");
@@ -57,13 +58,13 @@ function Attendance() {
     <option value="THEORY">THEORY</option>
     <option value="PRACTICAL">PRACTICAL</option>
   </select>
-  <div style={{display:'flex',flexDirection:'column',height:'50px',width:'150px',margin:'0px 10px',backgroundColor:'white',border:'1px solid #CED4DA',borderRadius:'5px',justifyContent:'space-around',alignItems:'center'}}>
+  <div style={{display:'flex',flexDirection:'column',height:'50px',width:'150px',margin:'0px 10px',backgroundColor:'white',border:'1px solid #CED4DA',borderRadius:'5px',justifyContent:'space-around',alignItems:'center',fontSize:'12px'}}>
     START DATE
-  <input type='date' placeholder='Start Date' style={{border:'none',background:'transparent'}}/>
+  <input type='date' placeholder='Start Date' style={{border:'none',background:'transparent',height:'35px',width:'80%'}}/>
   </div>
-  <div style={{display:'flex',flexDirection:'column',height:'50px',width:'150px',margin:'0px 10px',backgroundColor:'white',border:'1px solid #CED4DA',borderRadius:'5px',justifyContent:'space-around',alignItems:'center'}}>
+  <div style={{display:'flex',flexDirection:'column',height:'50px',width:'150px',margin:'0px 10px',backgroundColor:'white',border:'1px solid #CED4DA',borderRadius:'5px',justifyContent:'space-around',alignItems:'center',fontSize:'12px'}}>
     END DATE
-  <input type='date' placeholder='Start Date' style={{border:'none',background:'transparent'}}/>
+  <input type='date' placeholder='Start Date' style={{border:'none',background:'transparent',height:'35px',width:'80%'}}/>
   </div>
   <div style={{padding:'0px 10px'}}>
   <button style={{backgroundColor:'#4154F1',height:'40px',border:'none',borderRadius:'5px',color:'white',padding:'10px 5px',display:'flex',alignItems:'center',justifyContent:'center'}}>Generate Sheet</button>
@@ -104,13 +105,13 @@ function Attendance() {
     <option value="THEORY">THEORY</option>
     <option value="PRACTICAL">PRACTICAL</option>
   </select>
-  <div style={{display:'flex',flexDirection:'column',height:'50px',width:'150px',margin:'0px 10px',backgroundColor:'white',border:'1px solid #CED4DA',borderRadius:'5px',justifyContent:'space-around',alignItems:'center'}}>
+  <div style={{display:'flex',flexDirection:'column',height:'50px',width:'150px',margin:'0px 10px',backgroundColor:'white',border:'1px solid #CED4DA',borderRadius:'5px',justifyContent:'space-around',alignItems:'center',fontSize:'12px'}}>
     START DATE
-  <input type='date' placeholder='Start Date' style={{border:'none',background:'transparent'}}/>
+  <input type='date' placeholder='Start Date' style={{border:'none',background:'transparent',height:'35px',width:'80%'}}/>
   </div>
-  <div style={{display:'flex',flexDirection:'column',height:'50px',width:'150px',margin:'0px 10px',backgroundColor:'white',border:'1px solid #CED4DA',borderRadius:'5px',justifyContent:'space-around',alignItems:'center'}}>
+  <div style={{display:'flex',flexDirection:'column',height:'50px',width:'150px',margin:'0px 10px',backgroundColor:'white',border:'1px solid #CED4DA',borderRadius:'5px',justifyContent:'space-around',alignItems:'center',fontSize:'12px'}}>
     END DATE
-  <input type='date' placeholder='Start Date' style={{border:'none',background:'transparent'}}/>
+  <input type='date' placeholder='Start Date' style={{border:'none',background:'transparent',height:'35px',width:'80%'}}/>
   </div>
   <div style={{padding:'0px 10px'}}>
   <button style={{backgroundColor:'#4154F1',height:'40px',border:'none',borderRadius:'5px',color:'white',padding:'10px 5px',display:'flex',alignItems:'center',justifyContent:'center'}}>Generate Sheet</button>

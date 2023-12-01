@@ -43,7 +43,7 @@ function Main() {
             <Link to='/student' style={{textDecoration:'none'}}><div style={{fontFamily:'Open Sans',fontWeight:'600',color:'#012970',display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'flex-start',margin:'10px 0px 0px 10px'}}><img src={Image4} alt='student'/><div>&nbsp;&nbsp;Student</div></div></Link>
         </div>
         {a===1?<div style={{margin:'10px 0px'}}>
-            <Link to='/adminaccess' style={{textDecoration:'none'}}><div style={{fontFamily:'Open Sans',fontWeight:'600',color:'#012970',display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'flex-start',margin:'10px 0px 0px 10px'}}><img src={Image6} alt='adminaccess'/><div>&nbsp;&nbsp;Super Access</div></div></Link>
+            <Link to='/adminaccess' style={{textDecoration:'none'}}><div style={{fontFamily:'Open Sans',fontWeight:'600',color:'#012970',display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'flex-start',margin:'10px 0px 0px 10px'}}><img src={Image6} alt='adminaccess'/><div>&nbsp;Super Access</div></div></Link>
         </div>:<div style={{display:'none'}}></div>}
         <div style={{margin:'10px 0px'}}>
             <div style={{display:'flex',justifyContent:'flex-start',fontFamily:'Open Sans',fontSize:'11px',fontWeight:'600',color:'#899BBD'}}>EXIT</div>

@@ -10,6 +10,14 @@ function generateConsts(type){
         actions: ["login"],
         name: "AUTH",
       };
+      case "group":
+      return {
+        reducers: default_reducers,
+        actions: ["group"],
+        name: "GROUP",
+      };
+      default:
+        
   }
 }
 
