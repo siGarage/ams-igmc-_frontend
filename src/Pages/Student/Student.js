@@ -81,19 +81,19 @@ function Student() {
 
             <div style={{display:'flex',flexDirection:'column',width:'100%',margin:'0px 0px 10px 0px'}}>
               <div style={{fontSize:'12px',display:'flex',justifyContent:'flex-start',color:'#2C2C2C'}}>FATHER'S NAME</div>
-              <div style={{display:'flex',justifyContent:'flex-start',color:'#012970',fontSize:'16px'}}>MAST RAM</div>
+              <div style={{display:'flex',justifyContent:'flex-start',color:'#012970',fontSize:'14px'}}>MAST RAM</div>
             </div>
             <div style={{display:'flex',flexDirection:'column',width:'100%',margin:'0px 0px 10px 0px'}}>
               <div style={{fontSize:'12px',display:'flex',justifyContent:'flex-start',color:'#2C2C2C'}}>CURRENT ADDRESS</div>
-              <div style={{display:'flex',justifyContent:'flex-start',color:'#012970',fontSize:'16px'}}>HOLY LODGE SHIMLA</div>
+              <div style={{display:'flex',justifyContent:'flex-start',color:'#012970',fontSize:'14px'}}>HOLY LODGE SHIMLA</div>
             </div>
             <div style={{display:'flex',flexDirection:'column',width:'100%',margin:'0px 0px 10px 0px'}}>
               <div style={{fontSize:'12px',display:'flex',justifyContent:'flex-start',color:'#2C2C2C'}}>PERMANENT ADDRESS</div>
-              <div style={{display:'flex',justifyContent:'flex-start',color:'#012970',fontSize:'16px'}}>HOLY LODGE SHIMLA</div>
+              <div style={{display:'flex',justifyContent:'flex-start',color:'#012970',fontSize:'14px'}}>HOLY LODGE SHIMLA</div>
             </div>
             <div style={{display:'flex',flexDirection:'column',width:'100%',margin:'0px 0px 10px 0px'}}>
               <div style={{fontSize:'12px',display:'flex',justifyContent:'flex-start',color:'#2C2C2C'}}>STATUS</div>
-              <div style={{display:'flex',justifyContent:'flex-start',color:'#012970',fontSize:'16px'}}>LOREM IPSUM</div>
+              <div style={{display:'flex',justifyContent:'flex-start',color:'#012970',fontSize:'14px'}}>LOREM IPSUM</div>
             </div>
           </div>
         </div>
@@ -105,7 +105,7 @@ function Student() {
       </div>
       <div style={{margin:'20px 0px',display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',backgroundColor:'white',padding:'20px'}}>
         <div style={{width:'100%',display:'flex',justifyContent:'flex-start',fontSize:'18px',color:'#012970',fontWeight:'500',fontFamily:'Poppins',margin:'10px 0px'}}>Attendance Sheet Course Wise</div>
-      <table border="0" cellspacing="0" cellpadding="0" style={{width:'100%'}}>
+      <table border="0" cellSpacing="0" cellPadding="0" style={{width:'100%'}}>
         <thead style={{backgroundColor:'#DFDFDF',height:'30px',borderCollapse:'collapse'}}>
           <tr style={{color:'black'}}>
             <th style={{padding:'0px 5px',textAlign:'left'}}>Id</th>
