@@ -19,7 +19,7 @@ function AdminAcess() {
       <div className='AdminAccessPageBox1Inner'>Upload</div>
     </div>
     <div className='AdminAccessPageBox3'>
-    <Link className='AdminAccessNavLinks' to='/creategroup' ><button className='AdminAccessButton' >Upload CSV</button></Link>
+    <Link className='AdminAccessNavLinks' to='/uploadcsv' ><button className='AdminAccessButton' >Upload CSV</button></Link>
     </div>
     </section>
     </>

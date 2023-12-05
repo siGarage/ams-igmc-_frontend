@@ -33,4 +33,20 @@ export default class Auth {
         .catch((error) => defaultCatch(error, resolve));
     });
   }
+
+
+  static forgetPassword(values) {
+    console.log(values)
+    let payload = values;
+    return new Promise((resolve) => {
+      instance
+        .put("/forget-password", payload.data)
+        .then((response) => {
+          resolve(response);
+        })
+        .catch((error) => defaultCatch(error, resolve));
+    });
+  }
 }
+
+

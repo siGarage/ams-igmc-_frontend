@@ -16,6 +16,7 @@ const Report = React.lazy(()=>import('../Report/Report'))
 const AdminAccess= React.lazy(()=>import('../AdminAccess/AdminAccess'))
 const CreateGroup = React.lazy(()=>import('../AdminAccess/CreateGroup'))
 const ShowGroup = React.lazy(()=>import('../AdminAccess/ShowGroup'))
+const UploadCSV= React.lazy(()=>import('../AdminAccess/UploadCSV'))
 
 function Main() {
   let a=1;
@@ -91,6 +92,11 @@ function Main() {
 
       <Route exact path="/showgroups" element={<React.Suspense fallback={<>...</>}>
         <ShowGroup/>
+        </React.Suspense>
+        }/>
+
+<Route exact path="/uploadcsv" element={<React.Suspense fallback={<>...</>}>
+        <UploadCSV/>
         </React.Suspense>
         }/>
           </>}
