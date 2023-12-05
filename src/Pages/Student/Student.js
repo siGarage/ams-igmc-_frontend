@@ -32,7 +32,8 @@ function Student() {
     <div style={{margin:'50px',fontFamily:'Roboto'}}>
       <div style={{display:'flex'}}>
         <div style={{width:'25%',backgroundColor:'white',display:'flex',justifyContent:'center',alignItems:'center',flexDirection:'column',borderRadius:'9px'}}>
-        <div style={{margin:'10px 10px',display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'center'}}>
+        <div style={{margin:'10px 10px',display:'flex',flexDirection:'row',alignItems:'center',justifyContent:'center',position:'relative'}}>
+          <div style={{height:'15px',width:'15px',backgroundColor:'red',position:'absolute',top:'10px',left:'35%',borderRadius:'50%'}}></div>
           <div style={{width:'50%'}}><img src={Person} alt='Person' style={{height:'70px',width:'70px',borderRadius:'50%'}}/></div>
         <div style={{width:'50%',fontFamily:'Roboto',fontSize:'16px',fontWeight:'700',color:'#012970'}}>RAMDHARI SINGH DINKAR</div>
         </div>

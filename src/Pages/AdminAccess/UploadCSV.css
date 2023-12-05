@@ -1,0 +1,17 @@
+.Drag-Files{
+    min-height: 300px;
+    font-size: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(1, 41, 112);
+    flex-direction: column;
+    border:2px solid rgb(1, 41, 112);
+    margin: 10% 10%;
+    font-family: Roboto;
+}
+
+.Drag-Files img{
+    color:rgb(1, 41, 112);
+    
+}
