@@ -1,5 +1,5 @@
 import './Main.css';
-import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
+import {BrowserRouter as Router,Routes,Route, Navigate} from "react-router-dom";
 import * as React from 'react'
 import {Link} from 'react-router-dom'
 import Image1 from './Attendance.png'
@@ -53,53 +53,22 @@ function Main() {
     </div>
     <div style={{height:'100%',width:'85%'}}>   
         <Routes>
-        <Route exact path="/" element={<React.Suspense fallback={<>...</>}>
-        <Attendance/>
-        </React.Suspense>
-        }/>
-         
-         <Route exact path="/attendance" element={<React.Suspense fallback={<>...</>}>
-        <Attendance/>
-        </React.Suspense>
-        }/>
-        
-        <Route exact path="/dashboard" element={<React.Suspense fallback={<>...</>}>
-        <Dashboard/>
-        </React.Suspense>
-        }/>
-
-        <Route exact path="/" element={<React.Suspense fallback={<>...</>}>
-        <Report/>
-        </React.Suspense>
-        }/>
-
-        <Route exact path="/student" element={<React.Suspense fallback={<>...</>}>
-        <Student/>
-        </React.Suspense>
-        }/>  
-        
+         <Route exact path="/" element={<Attendance/> }/>
+         <Route exact path="/attendance" element={<Attendance/>}/>
+         <Route exact path="/dashboard" element={<Dashboard/>}/>
+         <Route exact path="/report" element={<Report/>}/>
+         <Route exact path="/student" element={<Student/>}/>  
+         <Route path="*" element={<Navigate to="/attendance" replace />} />
         
         {a===1 &&
           <>
-          <Route exact path="/adminaccess" element={<React.Suspense fallback={<>...</>}>
-          <AdminAccess/>
-        </React.Suspense>
-        }/>
-      <Route exact path="/creategroup" element={<React.Suspense fallback={<>...</>}>
-        <CreateGroup/>
-        </React.Suspense>
-        }/>
-
-      <Route exact path="/showgroups" element={<React.Suspense fallback={<>...</>}>
-        <ShowGroup/>
-        </React.Suspense>
-        }/>
-
-<Route exact path="/uploadcsv" element={<React.Suspense fallback={<>...</>}>
-        <UploadCSV/>
-        </React.Suspense>
-        }/>
+          <Route exact path="/adminaccess" element={ <AdminAccess/>}/>
+          <Route exact path="/creategroup" element={<CreateGroup/>}/>
+          <Route exact path="/showgroups" element={<ShowGroup/>}/>
+          <Route exact path="/uploadcsv" element={<UploadCSV/>}/>
           </>}
+
+          
         </Routes>
     </div>
     </div>
@@ -109,3 +78,5 @@ function Main() {
 }
 
 export default Main;
+
+

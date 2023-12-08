@@ -1,8 +1,7 @@
 import './ForgetPassword.css';
 import Image from './DM 04.png'
 import { useState } from 'react';
-import {ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import {toast } from "react-toastify";
 import Auth from "../../API/auth";
 import {Link} from 'react-router-dom';
 function ForgetPassword() {
@@ -39,7 +38,6 @@ function ForgetPassword() {
 
   return (
     <div className="Login" style={{backgroundColor:'#F6F9FF',height:'90vh'}}>
-      <ToastContainer/>
       <div style={{height:'100%',display:'flex',flexDirection:'row'}}>
       <div style={{width:'60%',height:'100%',display:'flex',justifyContent:'center',alignItems:'center',padding:'10px 20px'}}>
       <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center'}}>

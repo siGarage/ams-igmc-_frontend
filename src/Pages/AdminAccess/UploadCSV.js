@@ -2,15 +2,13 @@ import { useState } from 'react';
 import './UploadCSV.css'
 import {parse} from 'papaparse';
 import DropImage from './dropkk.png'
-import {ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import {toast } from "react-toastify";
 function UploadCSV(props) {
     let [data,setData]=useState([])
     console.log(data)
   return (
     <>
    <section>
-   <ToastContainer/>
     <div className="Drag-Files" onDragOver={(event)=>{
         event.preventDefault();
         }}

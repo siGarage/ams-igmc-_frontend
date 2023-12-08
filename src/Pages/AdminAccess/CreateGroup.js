@@ -1,7 +1,6 @@
 import './CreateGroup.css'
 import {useState} from 'react'
-import {ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import {toast } from "react-toastify";
 import GroupAPI from "../../API/groupapi";
 import { useSelector} from 'react-redux'
 function CreateGroup() {
@@ -31,7 +30,8 @@ function CreateGroup() {
     else{
       const data= {group_name,description,facultyAttedenceViewPermission,studentAttendenceViewPermision,facultyAttendeceUpdatePermission,studentAttendenceUpdatePermission}
       GroupAPI.createGroup({ data: data },token).then((res) => {
-        if (res.data.status_code === 200) 
+        console.log(res)
+        if (res.data.status_code === 201) 
         {
           toast.success(res.data.message)
         } 
@@ -44,7 +44,7 @@ function CreateGroup() {
   return (
     <>
    <section style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'flex-start',margin:'50px'}}>
-    <ToastContainer/>
+    
     <div style={{width:'94%',display:'flex',justifyContent:'flex-start',flexDirection:'column'}}>
       <div style={{display:'flex',justifyContent:'flex-start',fontFamily:'Nunito',fontSize:'24px',fontWeight:'600',color:'#4154F1'}}>Create Group</div>
     </div>

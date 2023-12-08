@@ -24,9 +24,9 @@ function defaultCatch(error, resolve) {
 export default class Group {
 
   static createGroup(values,auth) {
-    let payload = values;
-    let token=auth;
-    let bearer='bearer'
+    const payload = values;
+    const token=auth;
+    const bearer='bearer'
     const autherizationToken=bearer + " " + token;
     instance.defaults.headers.common['authorization']=autherizationToken;
     return new Promise((resolve) => {
@@ -46,7 +46,7 @@ export default class Group {
     instance.defaults.headers.common['authorization']=autherizationToken;
     return new Promise((resolve) => {
       instance
-        .get("getGroup")
+        .get("getGroups")
         .then((response) => {
           resolve(response);
 
@@ -56,15 +56,14 @@ export default class Group {
   }
 
 
-  static deleteGroup(id,auth) {
-    let contentid = id;
-    let token=auth;
+  static deleteGroup(value) {
     let bearer='bearer'
-    const autherizationToken=bearer + " " + token;
+    console.log(value.id)
+    const autherizationToken=bearer + " " + value.token;
     instance.defaults.headers.common['authorization']=autherizationToken;
     return new Promise((resolve) => {
       instance
-        .delete("deleteGroup",{params: {id:contentid}})
+        .delete("deleteGroup",{body: {id:value.id}})
         .then((response) => {
           resolve(response);
         })

@@ -1,8 +1,8 @@
-import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
+import {BrowserRouter as Router,Routes,Route, Navigate} from "react-router-dom";
 
 import Login from '../Login/Login';
 import ForgetPassword from '../ForgetPassword/ForgetPassword'
-function Main() {
+function Public() {
   
   return (
     <>
@@ -11,10 +11,11 @@ function Main() {
         <Route exact path="/" element={<Login/>}/>
           <Route exact path="/login" element={<Login/>}/>
           <Route exact path="/forgetpassword" element={<ForgetPassword/>}/>
+          <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
     </Router>
     </>
   );
 }
 
-export default Main;
+export default Public;

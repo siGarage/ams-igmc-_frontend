@@ -1,7 +1,7 @@
 
 import {useEffect} from 'react';
-import {ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import {toast } from "react-toastify";
+
 import GroupAPI from "../../API/groupapi";
 import {memo} from 'react';
 import {useDispatch, connect } from 'react-redux';
@@ -11,7 +11,7 @@ function CreateGroup(props) {
   const {token,groupData}=props
 
     useEffect(()=>{
-        let validateForm=(token)=> {
+        const validateForm=(token)=> {
             GroupAPI.getGroup(token).then((res) => {
               dispatch({
                 type: constants("group").reducers.group.success,
@@ -22,8 +22,12 @@ function CreateGroup(props) {
         validateForm(token)
         },[token,dispatch])
 
-        let deleteGroup=(id,token)=> {
-            GroupAPI.deleteGroup(id,token).then((res) => {
+        const deleteGroup=(id,token)=> {
+          const data={
+            token,
+            id
+          }  
+          GroupAPI.deleteGroup(data).then((res) => {
                 if (res.data.status_code === 200) 
                 {
                   toast.success(res.data.message)
@@ -36,7 +40,6 @@ function CreateGroup(props) {
   return (
     <>
    <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'flex-start',margin:'50px'}}>
-    <ToastContainer/>
     <div style={{width:'94%',display:'flex',justifyContent:'flex-start',flexDirection:'column'}}>
       <div style={{display:'flex',justifyContent:'flex-start',fontFamily:'Nunito',fontSize:'24px',fontWeight:'600',color:'#4154F1'}}>Show / Manage Group</div>
     </div>
